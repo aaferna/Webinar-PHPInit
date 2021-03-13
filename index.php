@@ -10,7 +10,6 @@
 	if (!$dbCon) { echo "Hubo un problema con la base de datos"; }
 	else { 
 
-	// MYS	
 		mysqli_set_charset($dbCon, "utf8");
 
 		$QueryResponse1 = mysqli_query($dbCon, 'SELECT * FROM alma');
@@ -18,32 +17,28 @@
 
 		$QueryResponse3 = mysqli_query($dbCon, 'SELECT ids, titulo FROM seccion');
 
-	//	echo mysqli_error($dbCon);
-	
 		$var1 = $respose['nombreSitio']; // TITULO
 		$var2 = $respose['facebook']; // FACEBOOK
 		$var3 = $respose['instagram'];// INSTAGRAM
 
+		if (isset($_GET['pagina'])) {
+
+			$QueryResponse2 = mysqli_query($dbCon, 'SELECT * FROM seccion WHERE ids ='.$_GET['pagina']);
+			$respose = mysqli_fetch_array($QueryResponse2);
+
+			$titulo = $respose['titulo']; // TITULO
+			$contenido = $respose['contenido']; // FACEBOOK
+				
+		} else {
+
+			$QueryResponse2 = mysqli_query($dbCon, 'SELECT * FROM seccion WHERE ids = 1');
+			$respose = mysqli_fetch_array($QueryResponse2);
+
+			$titulo = $respose['titulo']; // TITULO
+			$contenido = $respose['contenido']; // FACEBOOK
 
 
-	if (isset($_GET['pagina'])) {
-
-		$QueryResponse2 = mysqli_query($dbCon, 'SELECT * FROM seccion WHERE ids ='.$_GET['pagina']);
-		$respose = mysqli_fetch_array($QueryResponse2);
-
-		$titulo = $respose['titulo']; // TITULO
-		$contenido = $respose['contenido']; // FACEBOOK
-			
-	} else {
-
-		$QueryResponse2 = mysqli_query($dbCon, 'SELECT * FROM seccion WHERE ids = 1');
-		$respose = mysqli_fetch_array($QueryResponse2);
-
-		$titulo = $respose['titulo']; // TITULO
-		$contenido = $respose['contenido']; // FACEBOOK
-
-
-	}
+		}
 
 	}
 
