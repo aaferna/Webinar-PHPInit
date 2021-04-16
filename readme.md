@@ -11,8 +11,6 @@ Este evento sale de un debate que se armo en un grupo de Whatsapp, en el que par
       <a href="https://www.youtube.com/watch?v=7kuiMmyxccA"> Ver Webinar en Youtube</a>
       <br>
       <a href="https://bit.ly/3rVjHus"> Opina de este Webinar </a> | 
-      <a href="https://bit.ly/2OLW49a"> Visita el Git </a> | 
-      <a href="https://bit.ly/3le1lSV"> Mi LinkedIn </a> | 
       <a href="https://github.com/gusgeek/Webinar-PHPInit/discussions"> Abrir debate </a>
       <br> <br>
     </strong>
